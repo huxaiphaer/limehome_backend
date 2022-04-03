@@ -28,5 +28,8 @@ class Reservation(TimeStampedModel, models.Model):
     phone_number = models.CharField(
         'Phone Number', max_length=150, null=True, blank=True)
 
+    class Meta:
+        ordering = ['-created']
+
     def __str__(self):
         return f'{self.first_name} {self.last_name}'
