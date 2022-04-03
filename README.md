@@ -1,8 +1,9 @@
 # Limehome Sample Backend.
+
 This is the hotel reservation backend application.
 
 
-### Requirements for setting up the project.
+###  Requirements for setting up the project.
 1. Python3.
 2. Django
 3. Virtualenv.
