@@ -61,6 +61,7 @@ INSTALLED_APPS = [
     'django.contrib.postgres',
 
     # external packages
+    'rest_framework',
     'django_countries',
     'django_extensions',
     'corsheaders',
