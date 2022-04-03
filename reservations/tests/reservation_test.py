@@ -27,12 +27,21 @@ class ReservationTests(TestCase):
         }
 
     def test_make_reservation(self):
+        """Make a reservation test."""
         response = self.client.post(
             reverse("reservation"), data=json.dumps(self.user_data),
+            content_type='application/json')
+        self.assertEqual(response.status_code, 200)
+
+    def test_get_all_reservations(self):
+        """Get all reservations test."""
+        response = self.client.get(
+            reverse("reservation"),
             content_type='application/json')
         self.assertEqual(response.status_code, 201)
 
     def test_missing_any_required_field(self):
+        """Make a reservation while missing a required field test."""
         self.user_data['email'] = ''
         response = self.client.post(
             reverse("reservation"), data=json.dumps(self.user_data),
@@ -41,6 +50,7 @@ class ReservationTests(TestCase):
                          "This field may not be blank.")
 
     def test_email_duplicates_while_reserving(self):
+        """Make a reservation while using duplicate email test."""
         self.client.post(
             reverse("reservation"), data=json.dumps(self.user_data),
             content_type='application/json')
@@ -49,4 +59,11 @@ class ReservationTests(TestCase):
             content_type='application/json')
         self.assertEqual(str(response.data['email'][0]),
                          "reservation with this Email already exists.")
+
+    def test_list_of_countries(self):
+        """Get list of all countries"""
+        response = self.client.post(
+            reverse("countries"), data=json.dumps(self.user_data),
+            content_type='application/json')
+        self.assertEqual(response.status_code, 200)
 
