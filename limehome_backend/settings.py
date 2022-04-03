@@ -45,7 +45,7 @@ DEBUG = os.getenv('DEBUG')
 if DEBUG is None:
     DEBUG = False
 
-
+CORS_ORIGIN_ALLOW_ALL = True
 ALLOWED_HOSTS = ['*']
 
 
