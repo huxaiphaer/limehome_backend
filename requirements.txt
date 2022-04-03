@@ -5,7 +5,6 @@ django-countries==7.3.2
 django-extensions==3.1.5
 djangorestframework==3.13.1
 future==0.18.2
-generics==3.4.0
 pytz==2022.1
 pytest==7.0.1
 pytest-cov==3.0.0
