@@ -26,6 +26,7 @@ class ReservationView(generics.ListCreateAPIView):
 
 class CountriesView(generics.ListAPIView):
     """CountriesView class."""
+    queryset = None
 
     def get(self, request, *args, **kwargs):
         """Get countries."""
