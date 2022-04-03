@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     # external packages
     'django_countries',
+    'django_extensions',
 
     # apps
     'reservations',
