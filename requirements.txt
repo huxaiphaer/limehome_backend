@@ -1,0 +1,15 @@
+asgiref==3.5.0
+backports.zoneinfo==0.2.1
+Django==4.0.3
+django-countries==7.3.2
+django-extensions==3.1.5
+djangorestframework==3.13.1
+future==0.18.2
+generics==3.4.0
+pytz==2022.1
+pytest==7.0.1
+pytest-cov==3.0.0
+pytest-django==4.5.2
+serializers==0.2.4
+sqlparse==0.4.2
+typing-extensions==4.1.1
