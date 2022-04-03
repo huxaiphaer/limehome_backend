@@ -8,9 +8,9 @@ class Reservation(TimeStampedModel, models.Model):
     Reservation class.
     """
     first_name = models.CharField(
-        'First Name', max_length=150, null=True, blank=True)
+        'First Name', max_length=150, null=False, blank=False)
     last_name = models.CharField(
-        'Last Name', max_length=150, null=True, blank=True)
+        'Last Name', max_length=150, null=False, blank=False)
     check_in = models.DateField(
         'Name', max_length=150, null=False, blank=False)
     check_out = models.DateField(
@@ -18,15 +18,15 @@ class Reservation(TimeStampedModel, models.Model):
     number_of_guests = models.IntegerField(
         'Number of guests', default=1)
     billing_address = models.CharField(
-        'Billing Address', max_length=150, null=True, blank=True)
+        'Billing Address', max_length=150, null=False, blank=False)
     billing_country = CountryField()
     postal_code = models.IntegerField(
         'Postal code', default=1)
     city = models.CharField(
-        'City', max_length=150, null=True, blank=True)
-    email = models.EmailField('Email', db_index=True, unique=True)
+        'City', max_length=150, null=False, blank=False)
+    email = models.EmailField('Email', db_index=False, unique=True)
     phone_number = models.CharField(
-        'Phone Number', max_length=150, null=True, blank=True)
+        'Phone Number', max_length=150, null=False, blank=False)
 
     class Meta:
         ordering = ['-created']
