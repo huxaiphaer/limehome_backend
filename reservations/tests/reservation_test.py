@@ -31,14 +31,14 @@ class ReservationTests(TestCase):
         response = self.client.post(
             reverse("reservation"), data=json.dumps(self.user_data),
             content_type='application/json')
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 201)
 
     def test_get_all_reservations(self):
         """Get all reservations test."""
         response = self.client.get(
             reverse("reservation"),
             content_type='application/json')
-        self.assertEqual(response.status_code, 201)
+        self.assertEqual(response.status_code, 200)
 
     def test_missing_any_required_field(self):
         """Make a reservation while missing a required field test."""
@@ -62,8 +62,8 @@ class ReservationTests(TestCase):
 
     def test_list_of_countries(self):
         """Get list of all countries"""
-        response = self.client.post(
-            reverse("countries"), data=json.dumps(self.user_data),
+        response = self.client.get(
+            reverse("countries"),
             content_type='application/json')
         self.assertEqual(response.status_code, 200)
 
