@@ -1,1 +1,1 @@
-web: gunicorn limehome.wsgi
+web: gunicorn run:app
