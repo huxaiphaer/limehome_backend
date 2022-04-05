@@ -42,3 +42,10 @@ Then finally run :
 ```
 $ ./manage.py runserver
 ```
+
+To access the hosted backend service :
+
+visit :
+```
+https://limehomehuxy.herokuapp.com
+```
